@@ -47,6 +47,7 @@ async function onFormSubmit(event) {
 
 async function onLoadMore() {
   await fetchImages({ isNewSearch: false });
+  smoothScrollGallery();
 }
 
 async function fetchImages({ isNewSearch }) {
@@ -80,8 +81,6 @@ async function fetchImages({ isNewSearch }) {
     }
 
     createGallery(hits);
-
-    smoothScrollGallery();
 
     const totalPages = Math.ceil(totalHits / limit);
 

@@ -81,9 +81,7 @@ async function fetchImages({ isNewSearch }) {
 
     createGallery(hits);
 
-    if (page > 1) {
-      smoothScrollGallery();
-    }
+    smoothScrollGallery();
 
     const totalPages = Math.ceil(totalHits / limit);
 
@@ -115,6 +113,7 @@ function smoothScrollGallery() {
 
   window.scrollBy({
     top: picHeight * 2,
+    left: 0,
     behavior: 'smooth',
   });
 }
